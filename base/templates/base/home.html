@@ -2,5 +2,10 @@
 
 {% block content %}
 <h1>Home page</h1>
-<p>To goto your room <a href="room/"><b>click here</b></a></p>
+
+<h3>Welcome to the Master classes rooms:</h3>
+{% for room in rooms %}
+<div>{{room.id}} -- <a href="{% url 'room' room.id %}"><b>{{room.name}}</b></a></div>
+<p>{{room.description}}</p>
+{% endfor %}
 {% endblock %}
